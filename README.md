@@ -1,2 +1,2 @@
 # OperatingSystems
-a coolection of my Operating Systems work
+a collection of my Operating Systems work

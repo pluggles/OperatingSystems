@@ -1,0 +1,8 @@
+To compile the programs run: 
+make
+
+to run problem 1: ./P1A1
+to run problem 2: ./P2A1
+to run problem 3: ./P3A1
+
+the typescript shows the making and execution of all three files, and some sample input for P1A1
