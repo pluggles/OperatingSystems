@@ -9,7 +9,6 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include <sys/time.h>
 #include <time.h>
 
 
@@ -20,11 +19,24 @@ int ARRAYSIZE;
 int main(int argc, char *argv[]) {
 	struct timespec start, finish;
 	double elapsed;
+	int i;
 	clock_gettime(CLOCK_MONOTONIC, & start);
 	
 	if (getArraySize(argc, argv) == -1) { /*get the array size from command line */
 		return -1;
 	}
+	srand(time(NULL));
+	int *array;
+	array = malloc (sizeof(int) * ARRAYSIZE);
+	for (i = 0; i < ARRAYSIZE; i++) {
+		array[i] =rand();
+		/* print to check random numbers are random */
+		/*printf("array index %d has value: %d\n", i, array[i]); */
+	}
+
+
+	free(array);
+	
 
 
 
