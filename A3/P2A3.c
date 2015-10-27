@@ -52,7 +52,16 @@ int main(int argc, char *argv[]) {
 			exit(1);
 		}
 	}
+	void *retVal;
+	for(i=0; i < P; ++i) {
+		pthread_join(threads[i], &retVal);
+	}
 
+/*	for (i = 0; i < ARRAYSIZE; i++) {
+		array[i] =rand();
+		print to check random numbers are random 
+		printf("array index %d has value: %d\n", i, array[i]); 
+	}*/
 	clock_gettime(CLOCK_MONOTONIC, &finish);
 	elapsed = (finish.tv_sec - start.tv_sec);
 	elapsed += (finish.tv_nsec - start.tv_nsec) / 1000000000.0;
@@ -84,35 +93,45 @@ int getArraySize (int argc, char *argv[]) {
 void * populateArray(void *x) {
 	int thread = *((int*) x);
 	free(x);
-	double base = floor(ARRAYSIZE/4);
-	double start, end; //index
+	double base = floor((double)(ARRAYSIZE/4));
+	int start, end; //index
 	switch (thread) {
 		case 0:
-			printf("thread value is: %d\n", thread);
+			/*printf("thread value is: %d\n", thread);*/
 			start = 0;
-			end = floor(ARRAYSIZE/4);
+			end = (int)floor(ARRAYSIZE/4);
+			for (start=start; start <= end; start++) {
+				array[start] = 0;
+			}
 			break;
 		case 1:
-			start = floor(ARRAYSIZE/4) + 1;
-			end = floor(ARRAYSIZE/2);
-			printf("thread value is: %d\n", thread);
+			start = (int)floor(ARRAYSIZE/4) + 1;
+			end = (int)floor(ARRAYSIZE/2);
+			for (start=start; start <= end; start++) {
+				array[start] = 1;
+			}
+			/*printf("thread value is: %d\n", thread);*/
 			break;
 		case 2:
-			start = floor(ARRAYSIZE/2) + 1;
-			end = ARRAYSIZE*3
-			printf("thread value is: %d\n", thread);
+			start = (int)floor(ARRAYSIZE/2) + 1;
+			end = base*3;
+			/*printf("thread value is: %d\n", thread);*/
+			for (start=start; start <= end; start++) {
+				array[start] = 2;
+			}
 			break;
 		case 3:
-			start = ARRAYSIZE*3 + 1;
+			start = base*3 + 1;
 			end = ARRAYSIZE-1;
-			printf("thread value is: %d\n", thread);
+			/*printf("thread value is: %d\n", thread);*/
+			for (start=start; start <= end; start++) {
+				array[start] = 3;
+			}
 			break;
 		default:
 			printf("something is wrong\n");
 
-		for(start; start <=end; start++){
-			
-		}
+
 	}
 
 	pthread_exit(0);
