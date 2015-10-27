@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <time.h>
-#include <sys/sysinfo.h>
+
 
 int getArraySize (int, char **);
 
