@@ -3,10 +3,13 @@
 * Assignment 3 - Problem 1
 * Name: Aron Lawrence
 * E-mail: aron.r.lawrence@wmich.edu
-* Submitted: 10/06/15
+* Submitted: 10/09/15
 *************************************************/
-
+#define _POSIX_C_SOURCE 199309L
 #include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <sys/time.h>
 #include <time.h>
 #include <sys/sysinfo.h>
 
@@ -28,7 +31,7 @@ int main(int argc, char *argv[]) {
 	clock_gettime(CLOCK_MONOTONIC, &finish);
 	elapsed = (finish.tv_sec - start.tv_sec);
 	elapsed += (finish.tv_nsec - start.tv_nsec) / 1000000000.0;
-	printf("Elapsed time for array of size %i : &d\n", ARRAYSIZE, elapsed);
+	printf("Elapsed time for array of size %i : %f\n", ARRAYSIZE, elapsed);
 	return 0;
 }
 
