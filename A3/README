@@ -1,0 +1,17 @@
+Running make will compile both programs
+
+you can run each prgram individually with:
+./P1A3 [number]
+./P2A3 [number]
+
+or if you run:
+./automate
+
+a bash script will run, that runs through each program with the 6 asked
+for input values and redirect the output to outfile.txt, that then gets
+echoed back to the termianal in a nice easy to see display
+
+the graph is in the ods file: DataGraphed.ods 
+the data used for the graph is in RecordedData.txt
+
+the questions to be answered about which code runs fastest are at the end of the slc report for program 2

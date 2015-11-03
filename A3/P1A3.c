@@ -5,7 +5,7 @@
 * E-mail: aron.r.lawrence@wmich.edu
 * Submitted: 10/09/15
 *************************************************/
-#define _POSIX_C_SOURCE 199309L
+#define _POSIX_C_SOURCE 199309L  /*seems like i need this timespec*/
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -13,9 +13,13 @@
 
 
 int getArraySize (int, char **);
-
+/* global varible */
 int ARRAYSIZE;
-
+/********************************************
+* keeps track of time
+* gets size of array
+* populates array
+*******************************************/
 int main(int argc, char *argv[]) {
 	struct timespec start, finish;
 	double elapsed;
@@ -34,19 +38,18 @@ int main(int argc, char *argv[]) {
 		/*printf("array index %d has value: %d\n", i, array[i]); */
 	}
 
-
 	free(array);
-	
-
-
-
 	clock_gettime(CLOCK_MONOTONIC, &finish);
 	elapsed = (finish.tv_sec - start.tv_sec);
 	elapsed += (finish.tv_nsec - start.tv_nsec) / 1000000000.0;
-	printf("Elapsed time for array of size %i : %f\n", ARRAYSIZE, elapsed);
+	printf("Elapsed time for array of size %i  Sequential Code: %f\n", ARRAYSIZE, elapsed);
 	return 0;
 }
-
+/********************************************
+* gets the argument from the command line to
+* find the size of the array
+* ARRAYSIZE is a global varible
+*********************************************/
 int getArraySize (int argc, char *argv[]) {
 	
 	char badChar;
@@ -56,7 +59,7 @@ int getArraySize (int argc, char *argv[]) {
 		return -1;
 	/* checks if number was entered */
 	} else if (sscanf (argv[1], "%i %c", &ARRAYSIZE, &badChar)!=1) { 
-		printf("Please enter a valid integer\n");
+		printf("Please enter a valid integer not: %s\n", argv[1]);
 		return -1;
 	/* checks if positive number */
 	} else if (ARRAYSIZE <= 0) { 

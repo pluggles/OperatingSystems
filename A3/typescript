@@ -1,0 +1,50 @@
+Script started on Sun 01 Nov 2015 10:14:08 PM EST
+]0;pluggles@plugglesComp: ~/Documents/Operating Systems/OperatingSystems/A3pluggles@plugglesComp:~/Documents/Operating Systems/OperatingSystems/A3$ ls
+A3P1SLC.odt  CS4540-A3.pdf    outfile.txt  README
+A3P2SLC.odt  DataGraphed.ods  P1A3.c       RecoredData.txt
+[0m[01;32mautomate.sh[0m  Makefile         P2A3.c       typescript
+]0;pluggles@plugglesComp: ~/Documents/Operating Systems/OperatingSystems/A3pluggles@plugglesComp:~/Documents/Operating Systems/OperatingSystems/A3$ make
+gcc -Wall -pedantic -std=c99 -g -o P1A3 P1A3.c -lrt
+gcc -Wall -pedantic -std=c99 -g -o P2A3 P2A3.c -lrt -pthread -lm
+]0;pluggles@plugglesComp: ~/Documents/Operating Systems/OperatingSystems/A3pluggles@plugglesComp:~/Documents/Operating Systems/OperatingSystems/A3$ ls
+A3P1SLC.odt  CS4540-A3.pdf    outfile.txt  [0m[01;32mP2A3[0m    RecoredData.txt
+A3P2SLC.odt  DataGraphed.ods  [01;32mP1A3[0m         P2A3.c  typescript
+[01;32mautomate.sh[0m  Makefile         P1A3.c       README
+]0;pluggles@plugglesComp: ~/Documents/Operating Systems/OperatingSystems/A3pluggles@plugglesComp:~/Documents/Operating Systems/OperatingSystems/A3$ cat aut omate.sh
+#!/bin/bash
+rm outfile.txt
+
+n=100
+for((i=1; i<7; i++))
+do
+./P1A3 "$n" >>outfile.txt
+let n=$n*10
+done
+
+let n=100
+
+for((i=1; i<7; i++))
+do
+./P2A3 "$n" >>outfile.txt
+let n=$n*10
+done
+
+cat outfile.txt
+exit 0
+]0;pluggles@plugglesComp: ~/Documents/Operating Systems/OperatingSystems/A3pluggles@plugglesComp:~/Documents/Operating Systems/OperatingSystems/A3$ ./autom ate.sh
+Elapsed time for array of size 100  Sequential Code: 0.000178
+Elapsed time for array of size 1000  Sequential Code: 0.000200
+Elapsed time for array of size 10000  Sequential Code: 0.000540
+Elapsed time for array of size 100000  Sequential Code: 0.003979
+Elapsed time for array of size 1000000  Sequential Code: 0.020100
+Elapsed time for array of size 10000000  Sequential Code: 0.083032
+Elapsed time for array of size 100 using Parallel Code: 0.000258
+Elapsed time for array of size 1000 using Parallel Code: 0.000215
+Elapsed time for array of size 10000 using Parallel Code: 0.000291
+Elapsed time for array of size 100000 using Parallel Code: 0.000365
+Elapsed time for array of size 1000000 using Parallel Code: 0.001845
+Elapsed time for array of size 10000000 using Parallel Code: 0.011670
+]0;pluggles@plugglesComp: ~/Documents/Operating Systems/OperatingSystems/A3pluggles@plugglesComp:~/Documents/Operating Systems/OperatingSystems/A3$ exit
+exit
+
+Script done on Sun 01 Nov 2015 10:14:59 PM EST
