@@ -1,12 +1,12 @@
-Elapsed time for array of size 100  Sequential Code: 0.000178
-Elapsed time for array of size 1000  Sequential Code: 0.000200
-Elapsed time for array of size 10000  Sequential Code: 0.000540
-Elapsed time for array of size 100000  Sequential Code: 0.003979
-Elapsed time for array of size 1000000  Sequential Code: 0.020100
-Elapsed time for array of size 10000000  Sequential Code: 0.083032
-Elapsed time for array of size 100 using Parallel Code: 0.000258
-Elapsed time for array of size 1000 using Parallel Code: 0.000215
-Elapsed time for array of size 10000 using Parallel Code: 0.000291
-Elapsed time for array of size 100000 using Parallel Code: 0.000365
-Elapsed time for array of size 1000000 using Parallel Code: 0.001845
-Elapsed time for array of size 10000000 using Parallel Code: 0.011670
+Elapsed time for array of size 100  Sequential Code: 0.000173
+Elapsed time for array of size 1000  Sequential Code: 0.000206
+Elapsed time for array of size 10000  Sequential Code: 0.000538
+Elapsed time for array of size 100000  Sequential Code: 0.002904
+Elapsed time for array of size 1000000  Sequential Code: 0.018015
+Elapsed time for array of size 10000000  Sequential Code: 0.104877
+Elapsed time for array of size 100 using Parallel Code: 0.000261
+Elapsed time for array of size 1000 using Parallel Code: 0.000294
+Elapsed time for array of size 10000 using Parallel Code: 0.000219
+Elapsed time for array of size 100000 using Parallel Code: 0.000380
+Elapsed time for array of size 1000000 using Parallel Code: 0.001861
+Elapsed time for array of size 10000000 using Parallel Code: 0.011043

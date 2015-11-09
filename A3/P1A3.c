@@ -5,7 +5,7 @@
 * E-mail: aron.r.lawrence@wmich.edu
 * Submitted: 10/09/15
 *************************************************/
-#define _POSIX_C_SOURCE 199309L  /*seems like i need this timespec*/
+#define _POSIX_C_SOURCE 199309L  /*seems like i need this for timespec*/
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -55,7 +55,7 @@ int getArraySize (int argc, char *argv[]) {
 	char badChar;
 	/* checks if proper number of args */
 	if (argc != 2) {
-		printf("Error ussage is: %s [Number]\n", argv[0]); 
+		printf("Error usage is: %s [Number]\n", argv[0]); 
 		return -1;
 	/* checks if number was entered */
 	} else if (sscanf (argv[1], "%i %c", &ARRAYSIZE, &badChar)!=1) { 
