@@ -1,5 +1,3 @@
-obj-m += hello-1.o
-obj-m += simple.o
 obj-m += ProjectA4.o
 
 all:

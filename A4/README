@@ -1,0 +1,5 @@
+to compile the program run make
+to load the program into the kernal: sudo insmod ProjectA4.k0
+to view the kernal log: dmesg:
+to remove to kernal MOdule: sudo rmmod ProjectA4
+to view a new cleared kernal log: sudo dmesg -c
