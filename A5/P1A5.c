@@ -82,7 +82,7 @@ void * monteCarlo(void *arg) {
 	double range = (max - min); 
     double divisor = RAND_MAX / range;
 	int counter = 0;
-	int i;
+	long i;
 	unsigned int threadSeed = seed + thread;
 
 	for (i=0; i < NR_PTS; i++) {
