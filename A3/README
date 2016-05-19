@@ -1,3 +1,7 @@
+These two programs each populate arrays, one uses threads the other populates arrays sequentially
+The time each prgram takes to run is recorded
+
+
 Running make will compile both programs
 
 you can run each prgram individually with:
