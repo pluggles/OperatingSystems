@@ -1,0 +1,2 @@
+This Program uses pipes to ask a user for a "password" and sends that passwaord to a child process to check for password strength,
+the child then sends the decision (strong, weak, short) back to the parent
