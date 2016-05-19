@@ -1,3 +1,7 @@
+program 1: this is just a basic pointer warm up excerise, just reassigns varibles, and gets user imput
+program 2: populates two arrays, one with integers, and one with letters, prints contents of even indices
+program 3: creates 3 arrays, populates array 2/3 with integers from array 1, sums and aberages the values in array 2 and 3
+
 To compile the programs run: 
 make
 
