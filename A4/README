@@ -1,3 +1,7 @@
+This assignment was to make an dload a linux kernel module, we created a simple module, that had details about a "students info"
+The students info are stored in a struct and a linked list is made and printed out from dmesg
+
+
 to compile the program run make
 to load the program into the kernal: sudo insmod ProjectA4.k0
 to view the kernal log: dmesg:
